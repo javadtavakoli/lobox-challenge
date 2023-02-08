@@ -1,6 +1,7 @@
 import useSelectStyles from "./styles";
+import { ISelectProps } from "./types";
 
-const Select = () => {
+const Select = (props:ISelectProps) => {
   const classes = useSelectStyles();
   return (
     <div className={classes.container}>

@@ -34,10 +34,14 @@ const useSelectStyles = createUseStyles((theme: ThemeType) => ({
     borderRadius: 5,
     padding: "0.5em 0.2em",
     transition: "all ease-in-out 50ms",
+    "&::before": {
+      content: ">"
+    },
     "&:hover": {
       background: `${theme.primaryColor}1f`,
       color: theme.primaryColor,
     },
+
   },
 }));
 

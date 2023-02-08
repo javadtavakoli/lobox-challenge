@@ -8,7 +8,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.container}>
-        <Select />
+        <Select onOptionAdded={(ev)=>{}} onSelect={()=>{}} options={[{
+          key:"1",
+          value:"2"
+        }]}/>
       </div>
     </ThemeProvider>
   );
