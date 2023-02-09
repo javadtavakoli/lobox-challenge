@@ -22,7 +22,7 @@ const useSelectStyles = createUseStyles((theme: ThemeType) => ({
     padding: "0.2em 0.1em",
     height: "fit-content",
     maxHeight:"10em",
-    overflow: "hidden scroll",
+    overflow: "hidden auto",
   },
   option: {
     width: "100%",
