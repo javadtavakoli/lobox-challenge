@@ -24,8 +24,6 @@ const useSelectStyles = createUseStyles((theme: ThemeType) => ({
     flex: 1,
     border: "none",
     outline: "none",
-
-
   }),
   optionsBox: {
     width: "100%",
@@ -44,6 +42,7 @@ const useSelectStyles = createUseStyles((theme: ThemeType) => ({
   optionContent: {
     flex: 1
   },
+  selected: {},
   option: {
     width: "100%",
     background: theme.backgroundColor,
@@ -55,14 +54,13 @@ const useSelectStyles = createUseStyles((theme: ThemeType) => ({
     borderRadius: 5,
     padding: "0.5em 0.4em",
     transition: "all ease-in-out 50ms",
-    "&::before": {
-      content: ">"
-    },
-    "&:hover": {
+
+    "&$selected, &:hover": {
       background: `${theme.primaryColor}1f`,
       color: theme.primaryColor,
     },
-    "& i": {
+
+    "&$selected i": {
       width: "1em",
       height: "1em",
       background: "url(/assets/icons/check.svg) no-repeat center center",

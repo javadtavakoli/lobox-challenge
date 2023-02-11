@@ -8,10 +8,29 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.container}>
-        <Select width={"10em"} onOptionAdded={(ev)=>{}} onSelect={()=>{}} options={[{
-          key:"1",
-          value:"2"
-        }]}/>
+        <Select
+          width={"20em"}
+          onOptionAdded={(ev) => {}}
+          onSelect={() => {}}
+          options={[
+            {
+              key: "1",
+              value: "Option 1",
+            },
+            {
+              key: "2",
+              value: "Option 2",
+            },
+            {
+              key: "3",
+              value: "Option 3",
+            },
+            {
+              key: "4",
+              value: "Option 4",
+            },
+          ]}
+        />
       </div>
     </ThemeProvider>
   );
