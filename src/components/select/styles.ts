@@ -6,19 +6,27 @@ const useSelectStyles = createUseStyles((theme: ThemeType) => ({
   container: {
     position: "relative",
   },
+  opened: {},
   inputContainer: (props: ISelectElementProps) => ({
     borderRadius: 5,
     outline: `3px solid ${theme.primaryColor}55`,
     border: `2px solid ${theme.primaryColor}ee`,
     padding: "0.5em",
     width: props.width,
+    background: "none",
+    cursor: "pointer",
     display: "flex",
     "& i": {
       width: "1em",
       height: "1em",
       background: "url(/assets/icons/arrow-down.svg) no-repeat center center",
-      backgroundSize: "contain"
+      backgroundSize: "contain",
+      transition: "transform 100ms"
+    },
+    "&$opened i": {
+      transform: "rotate(180deg)"
     }
+
   }),
   input: () => ({
     flex: 1,
