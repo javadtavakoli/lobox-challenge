@@ -13,7 +13,6 @@ const useSelectStyles = createUseStyles((theme: ThemeType) => ({
     border: `2px solid ${theme.primaryColor}ee`,
     padding: "0.5em",
     width: props.width,
-    background: "none",
     cursor: "pointer",
     display: "flex",
     "& i": {

@@ -13,14 +13,18 @@ const Select = (props: ISelectProps) => {
     setOpened(false);
     props.onSelect(option.key);
   };
+  const addOption = () => {
+    const addedOption = props.onOptionAdded(inputValue);
+    addedOption && onSelect(addedOption);
+  };
   const onInputKeyDown = (key: string) => {
     if (key === "Enter") {
-      props.onOptionAdded(inputValue);
+      addOption();
     }
   };
   return (
     <div className={classes.container}>
-      <button
+      <div
         className={`${classes.inputContainer} ${opened && classes.opened}`}
         onClick={() => setOpened((_opened) => !_opened)}
       >
@@ -31,7 +35,7 @@ const Select = (props: ISelectProps) => {
           onKeyDown={(e) => onInputKeyDown(e.code)}
         />
         <i></i>
-      </button>
+      </div>
       {opened && (
         <div className={classes.optionsBox}>
           {props.options.map((i) => (

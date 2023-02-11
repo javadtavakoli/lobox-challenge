@@ -4,7 +4,7 @@ export interface ISelectElementProps {
 export interface ISelectProps extends ISelectElementProps {
   options: ISelectOption[];
   onSelect: (selectedKey: string) => void;
-  onOptionAdded: (value: string) => void;
+  onOptionAdded: (value: string) => ISelectOption | undefined;
 }
 export interface ISelectOption {
   key: string;

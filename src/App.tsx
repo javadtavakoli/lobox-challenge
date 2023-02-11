@@ -2,34 +2,21 @@ import Select from "./components/select";
 import { ThemeProvider } from "react-jss";
 import theme from "./theme";
 import useAppStyles from "./AppStyles";
+import useSelectOptions from "./hooks/selectOptions";
 
 function App() {
   const classes = useAppStyles();
+  const { options, onOptionAdded } = useSelectOptions();
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.container}>
         <Select
           width={"20em"}
-          onOptionAdded={(ev) => {}}
-          onSelect={() => {}}
-          options={[
-            {
-              key: "1",
-              value: "Option 1",
-            },
-            {
-              key: "2",
-              value: "Option 2",
-            },
-            {
-              key: "3",
-              value: "Option 3",
-            },
-            {
-              key: "4",
-              value: "Option 4",
-            },
-          ]}
+          onOptionAdded={onOptionAdded}
+          onSelect={(selectedKey) =>
+            console.log(`selected key: ${selectedKey}`)
+          }
+          options={options}
         />
       </div>
     </ThemeProvider>
