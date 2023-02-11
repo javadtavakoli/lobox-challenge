@@ -45,6 +45,9 @@ const useSelectStyles = createUseStyles((theme: ThemeType) => ({
     height: "fit-content",
     maxHeight: "10em",
     overflow: "hidden auto",
+    "&::-webkit-scrollbar": { backgroundColor: "#fff", width: 16 },
+    "&::-webkit-scrollbar-track": { backgroundColor: "#fff" },
+    "&::-webkit-scrollbar-thumb": { backgroundColor: "#babac0", borderRadius: 16, border: "4px solid #fff" }
   },
   optionContent: {
     flex: 1
