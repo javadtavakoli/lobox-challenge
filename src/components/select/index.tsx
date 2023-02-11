@@ -1,17 +1,19 @@
 import useSelectStyles from "./styles";
 import { ISelectProps } from "./types";
 
-const Select = (props:ISelectProps) => {
-  const classes = useSelectStyles();
+const Select = (props: ISelectProps) => {
+  const classes = useSelectStyles({ width: "20em" });
   return (
     <div className={classes.container}>
-      <input className={classes.input} />
+      <div className={classes.inputContainer}>
+        <input className={classes.input} />
+        <i></i>
+      </div>
       <div className={classes.optionsBox}>
-        <button className={classes.option}>Option 1</button>
-        <button className={classes.option}>Option 2</button>
-        <button className={classes.option}>Option 3</button>
-        <button className={classes.option}>Option 3</button>
-        <button className={classes.option}>Option 3</button>
+        <button className={classes.option}>
+          <div className={classes.optionContent}>Option</div>
+          <i></i>
+        </button>
       </div>
     </div>
   );

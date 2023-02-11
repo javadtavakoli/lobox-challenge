@@ -8,7 +8,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.container}>
-        <Select onOptionAdded={(ev)=>{}} onSelect={()=>{}} options={[{
+        <Select width={"10em"} onOptionAdded={(ev)=>{}} onSelect={()=>{}} options={[{
           key:"1",
           value:"2"
         }]}/>
