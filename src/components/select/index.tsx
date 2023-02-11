@@ -11,6 +11,12 @@ const Select = (props: ISelectProps) => {
     setSelectedItem(option.key);
     setInputValue(option.value);
     setOpened(false);
+    props.onSelect(option.key);
+  };
+  const onInputKeyDown = (key: string) => {
+    if (key === "Enter") {
+      props.onOptionAdded(inputValue);
+    }
   };
   return (
     <div className={classes.container}>
@@ -22,6 +28,7 @@ const Select = (props: ISelectProps) => {
           value={inputValue}
           onChange={(e) => setInputValue(e.currentTarget.value)}
           className={classes.input}
+          onKeyDown={(e) => onInputKeyDown(e.code)}
         />
         <i></i>
       </button>
