@@ -1,23 +1,29 @@
 import { useState } from "react";
 import useSelectStyles from "./styles";
-import { ISelectProps } from "./types";
+import { ISelectOption, ISelectProps } from "./types";
 
 const Select = (props: ISelectProps) => {
   const classes = useSelectStyles({ width: props.width });
   const [selectedItem, setSelectedItem] = useState("");
-  const onSelect = (key: string) => {
-    setSelectedItem(key);
+  const [inputValue, setInputValue] = useState("");
+  const onSelect = (option: ISelectOption) => {
+    setSelectedItem(option.key);
+    setInputValue(option.value);
   };
   return (
     <div className={classes.container}>
       <div className={classes.inputContainer}>
-        <input className={classes.input} />
+        <input
+          value={inputValue}
+          onChange={(e) => setInputValue(e.currentTarget.value)}
+          className={classes.input}
+        />
         <i></i>
       </div>
       <div className={classes.optionsBox}>
         {props.options.map((i) => (
           <button
-            onClick={() => onSelect(i.key)}
+            onClick={() => onSelect(i)}
             className={`${classes.option} ${
               selectedItem === i.key && classes.selected
             }`}
